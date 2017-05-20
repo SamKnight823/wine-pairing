@@ -14,39 +14,39 @@ Class WinePairing :: Wine
     wines
   end
 
-    def self.scrape_red
-      doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
+  def self.scrape_red
+    doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
 
-      wine = self.new
-      wine.name = 
-      wine.description = 
-      wine.taste = 
-    end
+    wine = self.new
+    wine.name = 
+    wine.description = 
+    wine.taste = 
+  end
 
-    def self.scrape_white
-      doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
+  def self.scrape_white
+    doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
 
-      wine = self.new
-      wine.name = 
-      wine.description = 
-      wine.taste = 
-    end
+    wine = self.new
+    wine.name = 
+    wine.description = 
+    wine.taste = 
+  end
 
-    def self.scrape_light
-      doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
-  
-      wine = self.new
-      wine.name = 
-      wine.description = 
-      wine.taste = 
-    end
+  def self.scrape_light
+    doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
 
-    def self.scrape_versatile
-      doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
+    wine = self.new
+    wine.name = 
+    wine.description = 
+    wine.taste = 
+  end
 
-      wine = self.new
-      wine.name = 
-      wine.description = 
-      wine.taste = 
-    end    
+  def self.scrape_versatile
+    doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
+
+    wine = self.new
+    wine.name = 
+    wine.description = 
+    wine.taste = 
+  end    
 end
