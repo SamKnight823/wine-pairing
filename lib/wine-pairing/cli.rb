@@ -1,4 +1,4 @@
-Class WinePairing :: CLI
+Class WinePairing::CLI
 
   def call
     greet_menu
@@ -41,6 +41,6 @@ Class WinePairing :: CLI
   def goodbye
       puts "Join us again tomorrow for dinner!"
   end
-
 end
+ 
   
