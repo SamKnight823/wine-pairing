@@ -1,4 +1,4 @@
-Class WinePairing::Wine
+class WinePairing::Wine
   attr_accessor :name, :description, :taste
 
   def self.list

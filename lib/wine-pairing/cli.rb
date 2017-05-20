@@ -1,4 +1,4 @@
-Class WinePairing::CLI
+class WinePairing::CLI
 
   def call
     greet_menu
