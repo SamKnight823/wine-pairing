@@ -1,12 +1,12 @@
 Class WinePairing :: CLI
 
   def call
-    greet_select
-    menu
+    greet_menu
+    select_wine
     goodbye
   end
 
-  def greet_select
+  def greet_menu
     puts "Let us help you choose the perfect wine to complement your meal. Please select your main course from the following menu:"
     @menu = WinePairing :: Wine.list
     @menu.each do |wine|
@@ -14,7 +14,7 @@ Class WinePairing :: CLI
     end
   end
 
-  def menu
+  def select_wine
     input = ""
     puts "Please describe your meal as red meat, white meat, seafood, variety, or quit."
     input = gets.strip.downcase
