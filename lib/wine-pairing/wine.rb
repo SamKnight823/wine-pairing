@@ -42,11 +42,11 @@ Class WinePairing :: Wine
   end
 
   def self.scrape_versatile
-    doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
+    doc = Nokogiri::HTML(open("https://en.wikipedia.org/wiki/Pinot_noir"))
 
     wine = self.new
-    wine.name = 
-    wine.description = 
-    wine.taste = 
+    wine.name = doc.search("h1#firstHeading.firstHeading").text.strip
+    wine.description = doc.search("div.thumbinner p").second.text.strip
+    wine.taste = "slightly dry, slightly sweet"
   end    
 end
