@@ -20,16 +20,16 @@ Class WinePairing :: CLI
     input = gets.strip.downcase
 
     if input == "red meat"
-      appropriate_wine = @menu(0)
+      appropriate_wine = @menu[0]
       puts "You should serve #{appropriate_wine.name} with dinner tonight"
     elsif input == "white meat"
-      appropriate_wine = @menu(1)
+      appropriate_wine = @menu[1]
       puts "You should serve #{appropriate_wine.name} with dinner tonight"
     elsif input == "seafood"
-      appropriate_wine = @menu(2)
+      appropriate_wine = @menu[2]
       puts "You should serve #{appropriate_wine.name} with dinner tonight"
     elsif input == "variety"
-      appropriate_wine = @menu(3)
+      appropriate_wine = @menu[3]
       puts "You should serve #{appropriate_wine.name} with dinner tonight"
     elsif input == "quit"
       goodbye
@@ -40,7 +40,7 @@ Class WinePairing :: CLI
 
   def goodbye
       puts "Join us again tomorrow for dinner!"
-    end
+  end
 
 end
   
