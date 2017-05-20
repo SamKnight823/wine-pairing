@@ -15,12 +15,12 @@ Class WinePairing :: Wine
   end
 
   def self.scrape_red
-    doc = Nokogiri::HTML(open("https://www.realsimple.com/holidays-entertaining/entertaining/food-drink/basic-wine-varieties"))
+    doc = Nokogiri::HTML(open("https://en.wikipedia.org/wiki/Merlot"))
 
     wine = self.new
-    wine.name = 
-    wine.description = 
-    wine.taste = 
+    wine.name = doc.search("h1#firstHeading.firstHeading").text.strip
+    wine.description = doc.search("table.infobox biota p").first.text.strip
+    wine.taste = "dry"
   end
 
   def self.scrape_white
