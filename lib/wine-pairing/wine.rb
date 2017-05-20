@@ -19,7 +19,7 @@ Class WinePairing :: Wine
 
     wine = self.new
     wine.name = doc.search("h1#firstHeading.firstHeading").text.strip
-    wine.description = doc.search("table.infobox biota p").first.text.strip
+    wine.description = doc.search("table.infobox biota p").third.text.strip.downcase
     wine.taste = "dry"
   end
 
@@ -28,7 +28,7 @@ Class WinePairing :: Wine
 
     wine = self.new
     wine.name = doc.search("h1#firstHeading.firstHeading").text.strip
-    wine.description = doc.search("table.infobox biota p").first.text.strip
+    wine.description = doc.search("table.infobox biota p").first.text.strip.downcase
     wine.taste = "sweeter"
   end
 
@@ -37,7 +37,7 @@ Class WinePairing :: Wine
 
     wine = self.new
     wine.name = doc.search("h1#firstHeading.firstHeading").text.strip
-    wine.description = doc.search("table.infobox biota p").first.text.strip
+    wine.description = doc.search("table.infobox biota p").second.text.strip.downcase
     wine.taste = "dry,sweet"
   end
 
@@ -46,7 +46,7 @@ Class WinePairing :: Wine
 
     wine = self.new
     wine.name = doc.search("h1#firstHeading.firstHeading").text.strip
-    wine.description = doc.search("div.thumbinner p").second.text.strip
+    wine.description = doc.search("div.thumbinner p").second.text.strip.downcase
     wine.taste = "slightly dry, slightly sweet"
   end    
 end

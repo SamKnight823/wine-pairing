@@ -10,7 +10,7 @@ Class WinePairing :: CLI
     puts "Let us help you choose the perfect wine to complement your meal. Please select your main course from the following menu:"
     @menu = WinePairing :: Wine.list
     @menu.each do |wine|
-      puts "Your selections include: #{wine.name}, which is #{wine.description}, and has a #{wine.taste} taste."
+      puts "Your selections include: #{wine.name}, described as #{wine.description}, and has a #{wine.taste} taste."
     end
   end
 
