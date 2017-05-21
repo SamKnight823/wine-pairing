@@ -46,7 +46,7 @@ class WinePairing::Wine
     doc = Nokogiri::HTML(open("http://www.wines.com/wine-varietals/"))
 
     wine = self.new
-    wine.name = doc.search("hh5:nth-of-type(74)").text.strip
+    wine.name = doc.search("h5:nth-of-type(74)").text.strip
     wine.description = doc.search("p:nth-of-type(82)").text.strip.downcase
     wine.taste = "dry,sweet"
 

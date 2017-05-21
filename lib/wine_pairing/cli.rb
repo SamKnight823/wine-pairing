@@ -7,35 +7,41 @@ class WinePairing::CLI
   end
 
   def greet_menu
-    puts "Let us help you choose the perfect wine to complement your meal. Your possible wine selections include:"
+    puts "Let us help you choose the perfect wine to complement your meal."
     @menu = WinePairing::Wine.list
     @menu.each.with_index(1) do |wine,i|
-      puts "Your selections include: #{i}. #{wine.name} described as #{wine.description}, and has a #{wine.taste} taste."
+      puts "Your possible selections include: #{i}. #{wine.name} which has a #{wine.taste} taste and the following description: #{wine.description}"
     end
   end
 
   def select_wine
     input = ""
-    puts "Please describe your meal as red meat, white meat, seafood, variety, or quit."
+    counter = 0
+    while counter < 4
+    counter +=1
+    puts "Please describe your meal as red meat, white meat, seafood, variety, or type quit."
     input = gets.strip.downcase
-    if input == "red meat"
-      appropriate_wine = @menu[0]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
-        suggest_merlot
-    elsif input == "white meat"
-      appropriate_wine = @menu[1]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
-        suggest_chardonnay
-    elsif input == "seafood"
-      appropriate_wine = @menu[2]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
-        suggest_sav
-    elsif input == "variety"
-      appropriate_wine = @menu[3]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
-        suggest_pinot
-    else
-      puts "I dont recognize that meal. Please select a meal exaclty as described above."
+      if input == "red meat"
+        appropriate_wine = @menu[0]
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+          suggest_merlot
+      elsif input == "white meat"
+        appropriate_wine = @menu[1]
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+          suggest_chardonnay
+      elsif input == "seafood"
+        appropriate_wine = @menu[2]
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+          suggest_sav
+      elsif input == "variety"
+        appropriate_wine = @menu[3]
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+          suggest_pinot
+      elsif input == "quit"
+        goodbye
+      else
+        puts "I dont recognize that meal. Please select a meal exaclty as described above."
+      end
     end
   end
 

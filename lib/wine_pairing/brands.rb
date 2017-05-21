@@ -39,7 +39,7 @@ class WinePairing::Brands
 
     wine = self.new
     wine.brand = doc.search("h3.float-fix:nth-of-type(6) a").text.strip
-    wine.retailer = doc.search("div.block.footer-widget-2 h3").text.strip.downcase
+    wine.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
     wine.price = "$8"
 
     wine
@@ -51,7 +51,7 @@ class WinePairing::Brands
     doc = Nokogiri::HTML(open("https://vinepair.com/wine-blog/15-great-supermarket-wines-for-under-15/"))
 
     merlot = self.new
-    merlot.brand = doc.search("h3.float-fix:nth-of-type(4)").text.strip
+    merlot.brand = doc.search("h3.float-fix:nth-of-type(3)").text.strip
     merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
     merlot.price = "$11"
 
@@ -64,7 +64,7 @@ class WinePairing::Brands
     doc = Nokogiri::HTML(open("https://vinepair.com/wine-blog/15-great-supermarket-wines-for-under-15/"))
 
     merlot = self.new
-    merlot.brand = doc.search("h3.float-fix:nth-of-type(14)").text.strip
+    merlot.brand = doc.search("h3.float-fix:nth-of-type(13)").text.strip
     merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
     merlot.price = "$12"
 
