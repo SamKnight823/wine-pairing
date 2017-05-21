@@ -38,7 +38,7 @@ class WinePairing::CLI
         puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
           suggest_pinot
       elsif input == "quit"
-        goodbye
+        break
       else
         puts "I dont recognize that meal. Please select a meal exaclty as described above."
       end
