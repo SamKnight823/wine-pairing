@@ -20,18 +20,70 @@ class WinePairing::CLI
     input = gets.strip.downcase
     if input == "red meat"
       appropriate_wine = @menu[0]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight"
+      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+        suggest_merlot
     elsif input == "white meat"
       appropriate_wine = @menu[1]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight"
+      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+        suggest_chardonnay
     elsif input == "seafood"
       appropriate_wine = @menu[2]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight"
+      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+        suggest_sav
     elsif input == "variety"
       appropriate_wine = @menu[3]
-      puts "You should serve #{appropriate_wine.name} with dinner tonight"
+      puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a brand suggestion? Y or N?"
+        suggest_pinot
     else
       puts "I dont recognize that meal. Please select a meal exaclty as described above."
+    end
+  end
+
+  def suggest_merlot
+    input = nil
+    input = gets.strip.upcase
+    if input == "Y"
+      @brands = WinePairing::Brands.suggest
+      suggestion = @brands[0]
+      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+    else
+      goodbye
+    end
+  end
+
+  def suggest_chardonnay
+    input = nil
+    input = gets.strip.upcase
+    if input == "Y"
+      @brands = WinePairing::Brands.suggest
+      suggestion = @brands[1]
+      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+    else
+      goodbye
+    end
+  end
+
+  def suggest_sav
+    input = nil
+    input = gets.strip.upcase
+    if input == "Y"
+      @brands = WinePairing::Brands.suggest
+      suggestion = @brands[2]
+      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+    else
+      goodbye
+    end
+  end
+
+  def suggest_pinot
+    input = nil
+    input = gets.strip.upcase
+    if input == "Y"
+      @brands = WinePairing::Brands.suggest
+      suggestion = @brands[3]
+      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+    else
+      goodbye
     end
   end
 

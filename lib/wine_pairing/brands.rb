@@ -21,50 +21,54 @@ class WinePairing::Brands
   end
 
   def self.scrape_merlot
-    
-    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=sr_1_1_hso_sc_smartcategory_2?rh=n%3A6503737011%2Ck%3Amerlot&keywords=merlot&ie=UTF8&qid=1495386402&sr=8-1-acs"))
+
+    doc = Nokogiri::HTML(open("https://vinepair.com/articles/10-most-popular-american-merlots/"))
 
     merlot = self.new
-    merlot.brand = doc.search("li#result_3.s-result-item h2.a-size-base").text.strip
-    merlot.retailer = doc.search("span.nav-logo-base").text.strip
-    merlot.price = doc.search("li#result_3.s-result-item div.a-row:nth-of-type(4) div.a-row").text.strip
+    merlot.brand = doc.search("h3.float-fix:nth-of-type(2) strong").text.strip
+    merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
+    merlot.price = "$10"
 
     merlot
+
   end
 
   def self.scrape_chardonnay
-    
-    doc = Nokogiri::HTML(open("https://www.amazon.com/Black-Oak-California-Chardonnay-White/dp/B01DQ0T7YA/ref=sr_1_4?ie=UTF8&qid=1495395408&sr=8-4&keywords=chardonnay"))
 
-    merlot = self.new
-    merlot.brand = doc.search("h1.a-size-large span.a-size-large").text.strip
-    merlot.retailer = doc.search("span.nav-logo-base").text.strip
-    merlot.price = doc.search("div.feature div.a-row span.a-size-large").text.strip
+    doc = Nokogiri::HTML(open("https://vinepair.com/buy-this-booze/10-affordable-chardonnays-that-arent-oak-bombs/"))
 
-    merlot
+    wine = self.new
+    wine.brand = doc.search("h3.float-fix:nth-of-type(6) a").text.strip
+    wine.retailer = doc.search("div.block.footer-widget-2 h3").text.strip.downcase
+    wine.price = "$8"
+
+    wine
+
   end
 
   def self.scrape_sav
-    
-    doc = Nokogiri::HTML(open("https://www.amazon.com/Dark-Horse-California-Sauvignon-Blanc/dp/B01DTHWEPO/ref=sr_1_7_s_it?s=grocery&ie=UTF8&qid=1495388657&sr=1-7&keywords=sauvignon+blanc"))
+
+    doc = Nokogiri::HTML(open("https://vinepair.com/wine-blog/15-great-supermarket-wines-for-under-15/"))
 
     merlot = self.new
-    merlot.brand = doc.search("h1.a-size-large span.a-size-large").text.strip
-    merlot.retailer = doc.search("span.nav-logo-base").text.strip
-    merlot.price = doc.search("div.feature div.a-row span.a-size-large").text.strip
+    merlot.brand = doc.search("h3.float-fix:nth-of-type(4)").text.strip
+    merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
+    merlot.price = "$11"
 
     merlot
+
   end
 
   def self.scrape_pinot
-    
-    doc = Nokogiri::HTML(open("https://www.amazon.com/Barefoot-Cellars-California-Pinot-Wine/dp/B01ATVOWGW/ref=sr_1_2?s=wine&ie=UTF8&qid=1495388443&sr=1-2&keywords=pinot+noir+wine"))
+
+    doc = Nokogiri::HTML(open("https://vinepair.com/wine-blog/15-great-supermarket-wines-for-under-15/"))
 
     merlot = self.new
-    merlot.brand = doc.search("h1.a-size-large span.a-size-large").text.strip
-    merlot.retailer = doc.search("span.nav-logo-base").text.strip
-    merlot.price = doc.search("div.feature div.a-row span.a-size-large").text.strip
+    merlot.brand = doc.search("h3.float-fix:nth-of-type(14)").text.strip
+    merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
+    merlot.price = "$12"
 
     merlot
+
   end
 end
