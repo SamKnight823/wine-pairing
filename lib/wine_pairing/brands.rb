@@ -21,17 +21,36 @@ class WinePairing::Brands
   end
 
   def self.scrape_merlot
-
+    comparison = []
+    merlot_hash = {}
     doc = Nokogiri::HTML(open("https://vinepair.com/articles/10-most-popular-american-merlots/"))
 
-    merlot = self.new
-    merlot.brand = doc.search("h3.float-fix:nth-of-type(2) strong").text.strip
-    merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
-    merlot.price = "$10"
+    merlot_hash = {
+    :brand => doc.search("h3.float-fix:nth-of-type(2) strong").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$10"
+    }
+    merlot_hash
+    comparison << merlot_hash
 
-    merlot
 
+    merlot_hash2 = {}
+    doc = Nokogiri::HTML(open("https://vinepair.com/articles/10-most-popular-american-merlots/"))
+    merlot_hash2 = {
+    :brand => doc.search("h3.float-fix:nth-of-type(9) strong").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$25"
+    }
+    merlot_hash2
+    comparison << merlot_hash2
+
+    comparison
   end
+
+
+
+
+
 
   def self.scrape_chardonnay
 
