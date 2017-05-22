@@ -23,19 +23,19 @@ class WinePairing::CLI
     input = gets.strip.downcase
       if input == "red meat"
         appropriate_wine = @menu[0]
-        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a bargain suggestion followed by a splurge suggestion? Y or N?"
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like to see a bargain suggestion followed by a splurge suggestion? Y or N?"
           suggest_merlot
       elsif input == "white meat"
         appropriate_wine = @menu[1]
-        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a bargain suggestion followed by a splurge suggestion? Y or N?"
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like to see a bargain suggestion followed by a splurge suggestion? Y or N?"
           suggest_chardonnay
       elsif input == "seafood"
         appropriate_wine = @menu[2]
-        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a bargain suggestion followed by a splurge suggestion? Y or N?"
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like to see a bargain suggestion followed by a splurge suggestion? Y or N?"
           suggest_sav
       elsif input == "variety"
         appropriate_wine = @menu[3]
-        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like a bargain suggestion followed by a splurge suggestion? Y or N?"
+        puts "You should serve #{appropriate_wine.name} with dinner tonight. Would you like to see a bargain suggestion followed by a splurge suggestion? Y or N?"
           suggest_pinot
       elsif input == "quit"
         break
