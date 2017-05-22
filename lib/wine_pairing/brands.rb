@@ -47,47 +47,85 @@ class WinePairing::Brands
     comparison
   end
 
-
-
-
-
-
   def self.scrape_chardonnay
-
+    comparison = []
+    merlot_hash = {}
     doc = Nokogiri::HTML(open("https://vinepair.com/buy-this-booze/10-affordable-chardonnays-that-arent-oak-bombs/"))
 
-    wine = self.new
-    wine.brand = doc.search("h3.float-fix:nth-of-type(6) a").text.strip
-    wine.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
-    wine.price = "$8"
+    merlot_hash = {
+    :brand => doc.search("h3.float-fix:nth-of-type(6) a").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$8"
+    }
+    merlot_hash
+    comparison << merlot_hash
 
-    wine
 
+    merlot_hash2 = {}
+    doc = Nokogiri::HTML(open("https://vinepair.com/buy-this-booze/10-affordable-chardonnays-that-arent-oak-bombs/"))
+    merlot_hash2 = {
+    :brand => doc.search("h3.float-fix:nth-of-type(1) a").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$28"
+    }
+    merlot_hash2
+    comparison << merlot_hash2
+
+    comparison
   end
 
-  def self.scrape_sav
 
+  def self.scrape_sav
+    comparison = []
+    merlot_hash = {}
     doc = Nokogiri::HTML(open("https://vinepair.com/wine-blog/15-great-supermarket-wines-for-under-15/"))
 
-    merlot = self.new
-    merlot.brand = doc.search("h3.float-fix:nth-of-type(3)").text.strip
-    merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
-    merlot.price = "$11"
+    merlot_hash = {
+    :brand => doc.search("h3.float-fix:nth-of-type(3)").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$11"
+    }
+    merlot_hash
+    comparison << merlot_hash
 
-    merlot
 
+    merlot_hash2 = {}
+    doc = Nokogiri::HTML(open("https://vinepair.com/articles/10-romantically-named-wines-valentines-day/"))
+    merlot_hash2 = {
+    :brand => doc.search("h3.float-fix:nth-of-type(1)").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$45"
+    }
+    merlot_hash2
+    comparison << merlot_hash2
+
+    comparison
   end
 
   def self.scrape_pinot
-
+    comparison = []
+    merlot_hash = {}
     doc = Nokogiri::HTML(open("https://vinepair.com/wine-blog/15-great-supermarket-wines-for-under-15/"))
 
-    merlot = self.new
-    merlot.brand = doc.search("h3.float-fix:nth-of-type(13)").text.strip
-    merlot.retailer = doc.search("div.block.footer-widget-2 h3").text.strip
-    merlot.price = "$12"
+    merlot_hash = {
+    :brand => doc.search("h3.float-fix:nth-of-type(13)").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$12"
+    }
+    merlot_hash
+    comparison << merlot_hash
 
-    merlot
 
+    merlot_hash2 = {}
+    doc = Nokogiri::HTML(open("https://vinepair.com/articles/10-romantically-named-wines-valentines-day/"))
+    merlot_hash2 = {
+    :brand => doc.search("h3.float-fix:nth-of-type(2)").text.strip,
+    :retailer => doc.search("div.block.footer-widget-2 h3").text.strip,
+    :price => "$46"
+    }
+    merlot_hash2
+    comparison << merlot_hash2
+
+    comparison
   end
 end

@@ -66,9 +66,12 @@ class WinePairing::CLI
     input = nil
     input = gets.strip.upcase
     if input == "Y"
-      @brands = WinePairing::Brands.suggest
-      suggestion = @brands[1]
-      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+        @brands = WinePairing::Brands.scrape_chardonnay
+        @brands.each do |hash|
+          hash.each do |key, value|
+          puts "#{key}: #{value}"
+          end
+        end
     else
       goodbye
     end
@@ -78,9 +81,12 @@ class WinePairing::CLI
     input = nil
     input = gets.strip.upcase
     if input == "Y"
-      @brands = WinePairing::Brands.suggest
-      suggestion = @brands[2]
-      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+        @brands = WinePairing::Brands.scrape_sav
+        @brands.each do |hash|
+          hash.each do |key, value|
+          puts "#{key}: #{value}"
+          end
+        end
     else
       goodbye
     end
@@ -90,9 +96,12 @@ class WinePairing::CLI
     input = nil
     input = gets.strip.upcase
     if input == "Y"
-      @brands = WinePairing::Brands.suggest
-      suggestion = @brands[3]
-      puts "#{suggestion.retailer} sells an excellent #{suggestion.brand} that costs #{suggestion.price}."
+        @brands = WinePairing::Brands.scrape_pinot
+        @brands.each do |hash|
+          hash.each do |key, value|
+          puts "#{key}: #{value}"
+          end
+        end
     else
       goodbye
     end
