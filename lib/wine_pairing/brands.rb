@@ -5,20 +5,7 @@ class WinePairing::Brands
     @brand = brand
     @retailer = retailer
     @price = price
-  end
-
-  def self.suggest
-    self.scrape_brands
-  end
-
-  def self.scrape_brands
-    brands = []
-    brands << self.scrape_merlot
-    brands << self.scrape_chardonnay
-    brands << self.scrape_sav
-    brands << self.scrape_pinot
-    brands
-  end
+  end  
 
   def self.scrape_merlot
     comparison = []

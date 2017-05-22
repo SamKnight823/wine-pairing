@@ -19,7 +19,7 @@ class WinePairing::CLI
     counter = 0
     while counter < 4
     counter +=1
-    puts "Please describe your meal as red meat, white meat, seafood, variety, or type quit."
+    puts "Please describe your main course as red meat, white meat, seafood, variety, or type quit to leave without enlightenment."
     input = gets.strip.downcase
       if input == "red meat"
         appropriate_wine = @menu[0]
